@@ -1,6 +1,6 @@
 {
   "name": "@otlyn/styles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Type-safe, variant-driven styling",
   "author": "Otlyn Black",
   "license": "MIT",
