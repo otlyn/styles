@@ -1,0 +1,37 @@
+{
+  "name": "@otlyn/styles",
+  "version": "0.1.3",
+  "description": "Type-safe, variant-driven styling",
+  "author": "Otlyn Black",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otlyn/styles.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/styles.d.ts",
+      "import": "./dist/styles.js"
+    }
+  },
+  "types": "./dist/styles.d.ts",
+  "files": [
+    "dist/styles.js",
+    "dist/styles.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && npm run test:types && node --test test/styles.test.js",
+    "test:types": "tsc --noEmit --strict --target ES2022 --module NodeNext test/styles.types.ts",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}
